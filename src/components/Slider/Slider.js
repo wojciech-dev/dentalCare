@@ -16,6 +16,10 @@ const SliderOverlay = styled.div`
   text-align: left;
   transform: translate(-50%, -50%);
   padding-left: 20px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 `;
 
 const SliderHeader = styled.h1`
@@ -24,6 +28,10 @@ const SliderHeader = styled.h1`
   text-transform: uppercase;
   color: #0c9ddd;
   margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 1.8rem;
+  }
 `;
 
 const SliderParagraph = styled.p`
@@ -31,6 +39,10 @@ const SliderParagraph = styled.p`
   font-size: 1.2rem;
   color: #111111;
   margin-bottom: 30px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 const Header = ({ data }) => (

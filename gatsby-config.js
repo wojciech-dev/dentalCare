@@ -10,6 +10,10 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-layout`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-mdx`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
@@ -35,9 +39,14 @@ module.exports = {
         path: `${__dirname}/src/data/articles`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `services`,
+        path: `${__dirname}/src/data/services`,
+      },
+    },
+
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

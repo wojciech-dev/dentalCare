@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { Link } from 'gatsby';
 
 const Nav = styled.nav`
+    position: fixed;
+    top: 0;
+    left: 0;
     background-color: #0facf1;
     width: 100%;
     z-index: 9;

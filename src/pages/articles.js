@@ -1,6 +1,7 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import styled from 'styled-components'
+import { Link } from 'gatsby'
 
 const Articles = styled.section`
   display: grid; 
@@ -31,6 +32,7 @@ const ArticlesParagraph = styled.p`
     font-style: italic;
     color: #808080;
     line-height: 1.5;
+    margin-bottom: 20px;
 `;
 
 
@@ -42,11 +44,14 @@ const ArticlesPage = ({ data }) => (
     </div>
     <Articles>
       {data.allMdx.nodes.map(item => (
-        <div key={item.frontmatter.id}>
-          <img src={item.frontmatter.featuredImage.childImageSharp.fluid.src} />
+        <div key={`articles/${item.frontmatter.id}`}>
+          <Link to={item.frontmatter.slug}>
+            <img src={item.frontmatter.featuredImage.childImageSharp.fluid.src} alt={item.frontmatter.title} />
+          </Link>
           <ArticlesWrapper>
             <ArticlesHeader>{item.frontmatter.title}</ArticlesHeader>
             <ArticlesParagraph>{item.excerpt}</ArticlesParagraph>
+            <button className="button"><Link to={item.frontmatter.slug}>Read more...</Link></button>
           </ArticlesWrapper>
         </div>
       ))}
