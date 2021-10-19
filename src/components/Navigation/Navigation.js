@@ -2,6 +2,11 @@ import * as React from "react"
 import styled from 'styled-components'
 import { Link } from 'gatsby';
 
+const HiddenHight = styled.div`
+    width: 100%;
+    height: 70px;
+`;
+
 const Nav = styled.nav`
     position: fixed;
     top: 0;
@@ -129,29 +134,32 @@ const Burger = ({ open, setOpen }) => {
 const Navigation = () => {
     const [open, setOpen] = React.useState(false);
     return (
-        <Nav>
-            <Burger open={open} setOpen={setOpen} />
-            <NavWrapper className="wrapper">
-                <Logo><Link to="/" id="logo">DENTAL CLINIC</Link></Logo>
-                <NavList open={open} setOpen={setOpen}>
-                    <NavListItem>
-                        <Link to="/" activeClassName="active">Home</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to="/about" activeClassName="active">About</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to="/articles" activeClassName="active">Articles</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to="/gallery" activeClassName="active">Gallery</Link>
-                    </NavListItem>
-                    <NavListItem>
-                        <Link to="/contact" activeClassName="active">Contact</Link>
-                    </NavListItem>
-                </NavList>
-            </NavWrapper>
-        </Nav>
+        <>
+            <Nav>
+                <Burger open={open} setOpen={setOpen} />
+                <NavWrapper className="wrapper">
+                    <Logo><Link to="/" id="logo">DENTAL CLINIC</Link></Logo>
+                    <NavList open={open} setOpen={setOpen}>
+                        <NavListItem>
+                            <Link to="/" activeClassName="active">Home</Link>
+                        </NavListItem>
+                        <NavListItem>
+                            <Link to="/about" activeClassName="active">About</Link>
+                        </NavListItem>
+                        <NavListItem>
+                            <Link to="/articles" activeClassName="active">Articles</Link>
+                        </NavListItem>
+                        <NavListItem>
+                            <Link to="/gallery" activeClassName="active">Gallery</Link>
+                        </NavListItem>
+                        <NavListItem>
+                            <Link to="/contact" activeClassName="active">Contact</Link>
+                        </NavListItem>
+                    </NavList>
+                </NavWrapper>
+            </Nav>
+            <HiddenHight />
+        </>
     );
 }
 
